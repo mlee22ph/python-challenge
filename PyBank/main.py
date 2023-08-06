@@ -1,8 +1,8 @@
 import os
 import csv
 
+# Open CSV file to read data
 csvpath = os.path.join('.', 'Resources', 'budget_data.csv')
-
 
 with open(csvpath) as csvfile:
 
@@ -26,11 +26,11 @@ with open(csvpath) as csvfile:
         # Count number of months
         totalMonths += 1
 
-
-        #
+        # Collect total Profit/Loss
         totalProfitLoss += int(row[1])
 
         # Check greatest increase, if value is greater than previous there is profit
+        # Also accumulate total change, comparison of change each month progressing
         if int(row[1]) > previousProfitLoss:
             if totalMonths > 1:
                 totalChange += int(row[1]) - previousProfitLoss
@@ -47,10 +47,30 @@ with open(csvpath) as csvfile:
             
         previousProfitLoss = int(row[1])
 
-    #
+    # Get average of total change
     aveChange = totalChange / (totalMonths - 1)
 
- 
+ # Open TXT file to write analysis
+txtpath = os.path.join('.', 'Analysis', 'Result.txt')
+
+with open(txtpath, 'w') as txtfile:
+
+    # Write to file
+    txtfile.write("Financial Analysis")
+    txtfile.write("\n")
+    txtfile.write("----------------------------")
+    txtfile.write("\n")
+    txtfile.write(f"Total Months: {totalMonths}")
+    txtfile.write("\n")
+    txtfile.write(f"Total: ${totalProfitLoss}")
+    txtfile.write("\n")
+    txtfile.write(f"Average Change: ${round(aveChange,2)}")
+    txtfile.write("\n")
+    txtfile.write(f"Greatest Increase in Profits: {greatestIncreaseMonth} (${greatestIncrease})")
+    txtfile.write("\n")
+    txtfile.write(f"Greatest Decrease in Profits: {greatestDecreaseMonth} ($-{greatestDecrease})")
+    txtfile.write("\n")
+
     # Display output
     print("Financial Analysis")
     print("----------------------------")
