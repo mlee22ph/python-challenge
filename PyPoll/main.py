@@ -36,18 +36,18 @@ with open(txtpath, 'w') as txtfile:
 
     # Write to file and display to output
     txtfile.write("Election Results")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write("----------------------------")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write(f"Total Votes: {totalVotes}")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write("----------------------------")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
 
-    print("Election Results")
-    print("----------------------------")
-    print(f"Total Votes: {totalVotes}")
-    print("----------------------------")
+    print("\nElection Results\n")
+    print("----------------------------\n")
+    print(f"Total Votes: {totalVotes}\n")
+    print("----------------------------\n")
 
     # Display candidates and results
     # Loop thru dict of candidates, votes
@@ -65,21 +65,21 @@ with open(txtpath, 'w') as txtfile:
 
         # Output to file
         txtfile.write(f"{candidate}: {round(percentVote, 3)}% ({candidateVote})")
-        txtfile.write("\n")
+        txtfile.write("\n\n")
 
         # Output to display
-        print(f"{candidate}: {round(percentVote, 3)}% ({candidateVote})")
+        print(f"{candidate}: {round(percentVote, 3)}% ({candidateVote})\n")
 
 
     # Display winner
     txtfile.write("----------------------------")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write(f"Winner: {winner}")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write("----------------------------")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
 
-    print("----------------------------")
-    print(f"Winner: {winner}")
-    print("----------------------------")
+    print("----------------------------\n")
+    print(f"Winner: {winner}\n")
+    print("----------------------------\n")
 

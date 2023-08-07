@@ -50,32 +50,32 @@ with open(csvpath) as csvfile:
     # Get average of total change
     aveChange = totalChange / (totalMonths - 1)
 
- # Open TXT file to write analysis
+# Open TXT file to write analysis
 txtpath = os.path.join('.', 'Analysis', 'Result.txt')
 
 with open(txtpath, 'w') as txtfile:
 
     # Write to file
     txtfile.write("Financial Analysis")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write("----------------------------")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write(f"Total Months: {totalMonths}")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write(f"Total: ${totalProfitLoss}")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write(f"Average Change: ${round(aveChange,2)}")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write(f"Greatest Increase in Profits: {greatestIncreaseMonth} (${greatestIncrease})")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
     txtfile.write(f"Greatest Decrease in Profits: {greatestDecreaseMonth} ($-{greatestDecrease})")
-    txtfile.write("\n")
+    txtfile.write("\n\n")
 
     # Display output
-    print("Financial Analysis")
-    print("----------------------------")
-    print(f"Total Months: {totalMonths}")
-    print(f"Total: ${totalProfitLoss}")
-    print(f"Average Change: ${round(aveChange,2)}")
-    print(f"Greatest Increase in Profits: {greatestIncreaseMonth} (${greatestIncrease})")
-    print(f"Greatest Decrease in Profits: {greatestDecreaseMonth} ($-{greatestDecrease})")
+    print("\nFinancial Analysis\n")
+    print("----------------------------\n")
+    print(f"Total Months: {totalMonths}\n")
+    print(f"Total: ${totalProfitLoss}\n")
+    print(f"Average Change: ${round(aveChange,2)}\n")
+    print(f"Greatest Increase in Profits: {greatestIncreaseMonth} (${greatestIncrease})\n")
+    print(f"Greatest Decrease in Profits: {greatestDecreaseMonth} ($-{greatestDecrease})\n")
